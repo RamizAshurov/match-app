@@ -1,0 +1,44 @@
+$primary: #8059EE;
+$text-color: #060606;
+
+$white: #FFFFFF;
+$grey: #75657D;
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal; 
+    font-weight: 400;
+    src: local("Roboto"), url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff")
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal; 
+    font-weight: 400;
+    src: local("Montserrat"), url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff")
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal; 
+    font-weight: 500;
+    src: local("Montserrat"), url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff")
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal; 
+    font-weight: 600;
+    src: local("Montserrat"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff")
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal; 
+    font-weight: 700;
+    src: local("Montserrat"), url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff")
+}
+
+@function to-vw($value) {
+  @return 100vw * math.div($value, 375)
+}

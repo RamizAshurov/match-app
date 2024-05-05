@@ -1,0 +1,281 @@
+@use "sass:math";
+
+@import "./reset.scss";
+@import "./global.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: $text-color;
+    font-family: "Montserrat", "sans-serif";
+}
+
+.container {
+    margin: 0 to-vw(16);
+}
+
+.match-app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.page {
+    flex-grow: 1;
+    padding: to-vw(16) 0 0;
+    overflow: auto;
+    &__title {
+        font-size: to-vw(22);
+        font-weight: 500;
+        line-height: 1.1;
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: to-vw(24);
+        }
+    }
+    &__edit-block {
+        display: flex;
+        gap: to-vw(8);
+        & > div {
+            width: calc(50% - to-vw(4));
+        }
+        &:not(:last-child) {
+            margin-bottom: to-vw(32);
+        }
+    }
+    &__invite {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__invite-block {
+        border: to-vw(0.5) dashed $grey;
+        border-radius: to-vw(10);
+        padding: to-vw(24) to-vw(16);
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: to-vw(8);
+        }
+    }
+    &__invite-title {
+        font-size: to-vw(18);
+        font-weight: 400;
+        line-height: 1;
+        &:not(:last-child) {
+            margin-bottom: to-vw(16);
+        }
+    }
+    &__invite-icon {
+        margin: 0 auto;
+        width: to-vw(64);
+        height: to-vw(64);
+    }
+    &__invite-button, &__find-button {
+        background: $white;
+        border-radius: to-vw(20);
+        color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: to-vw(6);
+        padding: to-vw(12.25);
+        width: 100%;
+        span {
+            // color: $primary;
+            font-size: to-vw(14);
+            font-weight: 500;
+            line-height: 1.1;
+        }
+    }
+    &__invite-button {
+        box-shadow: to-vw(1) to-vw(1) to-vw(5) 0 rgba(117, 101, 125, 0.15);
+    }
+    &__find {
+        background-color: $primary;
+        border-radius: to-vw(10);
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: to-vw(24) to-vw(16);
+        text-align: center;
+    }
+    &__find-title, &__find-avatars {
+        &:not(:last-child) {
+            margin-bottom: to-vw(20);
+        }
+    }
+    &__find-avatars {
+        display: flex;
+    }
+    &__find-avatar, &__find-more {
+        border: 2px solid $primary;
+        border-radius: 50%;
+        flex-shrink: 0;
+        width: to-vw(32);
+        height: to-vw(32);
+        &:not(:last-child) {
+            margin-right: to-vw(-11);
+        }
+    }
+    &__find-avatar {
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__find-more {
+        background-color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: to-vw(4);
+        span {
+            background-color: $primary;
+            border-radius: 50%;
+            width: to-vw(4);
+            height: to-vw(4);
+        }
+    }
+    &__find-button {
+    }
+    &__people-tab-buttons {
+        border-bottom: to-vw(0.5) solid rgba($color: $grey, $alpha: 0.2);
+        display: flex;
+        position: relative;
+        span {
+            background-color: $primary;
+            border-radius: to-vw(10);
+            position: absolute;
+            left: 0;
+            bottom: to-vw(-1);
+            width: 50%;
+            height: to-vw(2);
+            transition: all 0.15s ease 0s;
+        }
+        &:not(:last-child) {
+            margin-bottom: to-vw(12);
+        }
+    }
+    &__people-tab-button {
+        padding-bottom: to-vw(6);
+        width: 50%;
+        text-align: left;
+        &--active {
+            color: $primary
+        }
+    }
+    &__people-list {
+        display: none;
+        padding-bottom: to-vw(48);
+        &--active {
+            display: block;
+        }
+    }
+    &__person {
+        &:not(:last-child) {
+            margin-bottom: to-vw(4);
+        }
+    }
+}
+
+.nav {
+    background-color: #F0F0F0;
+    padding: to-vw(15) to-vw(20) to-vw(28);
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__menu-item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: to-vw(4);
+        img {
+            width: to-vw(24);
+            height: to-vw(24);
+        }
+        span {
+            font-family: "Roboto", "sans-serif";
+            font-size: to-vw(11);
+            font-weight: 400;
+            line-height: 1.18;
+        }
+    }
+}
+
+.person {
+    border: to-vw(0.5) solid rgba($color: $grey, $alpha: 0.2);
+    border-radius: to-vw(10);
+    display: flex;
+    gap: to-vw(16);
+    padding: to-vw(12) to-vw(16);
+    &__img {
+        border-radius: 50%;
+        width: to-vw(56);
+        height: to-vw(56);
+        object-fit: cover;
+    }
+    &__content {
+        align-self: center;
+        flex-grow: 1;
+    }       
+    &__name {
+        font-size: to-vw(16);
+        font-weight: 500;
+        line-height: 1;
+        &:not(:last-child) {
+            margin-bottom: to-vw(6);
+        }
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: to-vw(8);
+        &:not(:last-child) {
+            margin-bottom: to-vw(2);
+        }
+    }
+    &__geo {
+        display: flex;
+        align-items: center;
+        gap: to-vw(6);
+        span {
+            font-size: to-vw(12);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+    }
+    &__position {
+        color: $primary;
+        font-size: to-vw(12);
+        font-weight: 400;
+        line-height: 1.1;
+    }
+    &__progress {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-top: to-vw(8);
+        width: 100%;
+    }
+    &__progress-line {
+        background-color: #F9F9F9;
+        border-radius: to-vw(10);
+        width: math.div(198, 239) * 100%;
+        span {
+            background-color: #ACE39C;
+            border-radius: to-vw(10);
+            display: block;
+            height: to-vw(10);
+        }
+    }
+}
