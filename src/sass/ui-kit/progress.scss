@@ -1,0 +1,31 @@
+.progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: to-vw(8);
+    width: 100%;
+    &__value {
+        font-size: to-vw(16);
+        font-weight: 500;
+    }
+    &__progress-bar {
+        background-color: #F9F9F9;
+        width: math.div(198, 239) * 100%;
+        span {
+            background-color: $green;
+            display: block;
+            height: to-vw(10);
+        }
+        &--rounded {
+            border-radius: to-vw(10);
+            span {
+                border-radius: to-vw(10);
+            }
+        }
+        &--reverse {
+            span {
+                margin-left: auto;
+            }
+        }
+    }
+}

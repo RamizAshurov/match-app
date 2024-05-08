@@ -1,0 +1,10 @@
+.param {
+    display: flex;
+    align-items: center;
+    gap: to-vw(8);
+    &__name {
+        font-size: to-vw(12);
+        font-weight: 500;
+        line-height: 1.1;
+    }
+}

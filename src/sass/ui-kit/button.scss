@@ -1,0 +1,17 @@
+.button {
+    background: $white;
+    border-radius: to-vw(20);
+    box-shadow: to-vw(1) to-vw(1) to-vw(5) 0 rgba(117, 101, 125, 0.15);
+    color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: to-vw(6);
+    padding: to-vw(5) to-vw(16);
+    span {
+        // color: $primary;
+        font-size: to-vw(14);
+        font-weight: 500;
+        line-height: 1.1;
+    }
+}

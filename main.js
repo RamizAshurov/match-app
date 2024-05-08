@@ -1,27 +1,59 @@
-import './sass/styles.scss'
+import "./src/sass/styles.scss"
 
-document.querySelector(".page__people-tab-buttons").addEventListener("click", (e) => {
-  const tabPanel = e.currentTarget;
-  const tabContent = tabPanel.nextElementSibling;
-  const currentButton = e.target;
-  const currentPeopleList = currentButton.dataset.peopleList
+Array.from(document.querySelectorAll(".tab__buttons")).forEach(tabButtons => {
+  tabButtons.addEventListener("click", (e) => {
+    const tabPages = tabButtons.nextElementSibling;
+    const currentButton = e.target;
+    const currentTabPage = currentButton.dataset.num
 
-  let counter = 0;
-  let index = 0;
-
-  tabPanel.querySelectorAll("button").forEach(button => {
-    if (button === currentButton) {
-      index = counter
-    } else {
-      counter++
+    const pageMap = {
+      one: 1,
+      two: 2
     }
-  });
 
-  tabPanel.querySelector(".page__people-tab-button--active").classList.remove("page__people-tab-button--active")
-  tabPanel.querySelector("span").style.left = `${index * 50}%`;
-  currentButton.classList.add("page__people-tab-button--active")
-
-  tabContent.querySelector(".page__people-list--active").classList.remove("page__people-list--active")
-  tabContent.querySelector(".page__people-list--" + currentPeopleList).classList.add("page__people-list--active")
+    if (currentButton.classList.contains("tab__button--active")) {
+      return
+    }
+  
+    tabButtons.querySelector(".tab__button--active").classList.remove("tab__button--active")
+    tabButtons.querySelector("span").style.left = `${(pageMap[currentTabPage] - 1) * 50}%`;
+    currentButton.classList.add("tab__button--active")
+  
+    tabPages.querySelector(".tab__page--active").classList.remove("tab__page--active")
+    tabPages.querySelector(".tab__page--" + currentTabPage).classList.add("tab__page--active")
+  })
 })
 
+Array.from(document.querySelectorAll(".accordeon__button")).forEach(accordeonButtonEl => {
+    let timeoutId;
+    accordeonButtonEl.addEventListener("click", e => {
+        const accordeonEl = accordeonButtonEl.parentElement;
+        const accordeonContentEl = accordeonButtonEl.previousElementSibling;
+
+        if (accordeonEl.classList.contains("accordeon--open")) {
+            let accordeonContentHeight = accordeonContentEl.offsetHeight;
+            accordeonContentEl.style.height = accordeonContentHeight + "px";
+            accordeonEl.classList.remove("accordeon--open")
+            accordeonButtonEl.querySelector("span").innerHTML = "View info"
+            timeoutId = setTimeout(() => accordeonContentEl.style.height = "")
+        } else {
+            clearTimeout(timeoutId)
+            accordeonEl.classList.add("accordeon--open");
+            accordeonContentEl.style.height = accordeonContentEl.scrollHeight + "px";
+            accordeonButtonEl.querySelector("span").innerHTML = "Hide info"
+            // accordeonContentEl.addEventListener("transitionend", () => {
+            // }, { once: true })
+            if (timeoutId) {
+                return
+            }
+            accordeonContentEl.style.height = "auto"
+        }
+    })
+})
+
+if (document.querySelector(".buy-sub__button")) {
+  document.querySelector(".buy-sub__button").addEventListener("click", (e) => {
+    Array.from(document.querySelectorAll("._preview")).forEach(preivewEl => preivewEl.remove())
+    Array.from(document.querySelectorAll("._hide")).forEach(hideEl => hideEl.classList.remove("_hide"))
+  })
+}

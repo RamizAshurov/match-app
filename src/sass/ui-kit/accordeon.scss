@@ -1,0 +1,23 @@
+.accordeon {
+    &__content {
+        height: 0;
+        overflow: hidden;
+    }
+    &__button {
+        align-items: baseline;
+        margin: 0 auto;
+        span {
+            font-size: to-vw(12);
+        }
+    }
+    &--open {
+        .accordeon__content {
+            padding: 0 0 to-vw(24);
+        }
+        .accordeon__button {
+            img {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

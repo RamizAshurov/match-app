@@ -10,154 +10,164 @@
     <div id="app"></div>
     <div id="match-app" class="match-app">
       <div class="page">
-        <div class="container">
-          <h2 class="page__title">My People</h2>
-          <div class="page__edit-block">
-            <div class="page__invite">
-              <div class="page__invite-block">
-                <div class="page__invite-title">Add & analyze a new person</div>
-                <img class="page__invite-icon" src="./img/Union.svg" alt="">
-              </div>
-              <button class="page__invite-button" type="button">
-                <span>Invite friends</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-                  <rect x="4.75171" width="0.996094" height="10" rx="0.498047" fill="currentColor"/>
-                  <rect x="10.25" y="4.50195" width="0.996094" height="10" rx="0.498047" transform="rotate(90 10.25 4.50195)" fill="currentColor"/>
-                  </svg>
-              </button>
-            </div>
-            <div class="page__find">
-              <div class="page__find-title">Find new match in the application</div>
-              <div class="page__find-avatars">
-                <div class="page__find-avatar">
-                  <img src="./img/avatar.png" alt="">
-                </div>
-                <div class="page__find-avatar">
-                  <img src="./img/avatar.png" alt="">
-                </div>
-                <div class="page__find-avatar">
-                  <img src="./img/avatar.png" alt="">
-                </div>
-                <div class="page__find-avatar">
-                  <img src="./img/avatar.png" alt="">
-                </div>
-                <div class="page__find-avatar">
-                  <img src="./img/avatar.png" alt="">
-                </div>
-                <div class="page__find-avatar page__find-more">
-                  <span></span><span></span><span></span>
-                </div>
-              </div>
-              <button class="page__find-button" type="button">Discover</button>
-            </div>
+        <div class="page__header">
+          <div class="container">
+            <h2 class="page__title">My People</h2>
           </div>
-          <div class="page__people">
-            <div class="page__people-tab-buttons">
-              <button class="page__people-tab-button page__people-tab-button--active" type="button" data-people-list="liked">My likes</button>
-              <button class="page__people-tab-button" type="button" data-people-list="uploaded">Uploaded by me</button>
-              <span></span>
-            </div>
-            <div class="page__people-tab-conent">            
-              <div class="page__people-list page__people-list--liked page__people-list--active">
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Leslie Alexander, 28</h3>
-                    <div class="person__info">
-                      <div class="person__position">adventure explorer</div>
-                      <div class="person__geo">
-                        <img src="./img/location.svg" alt="">
-                        <span>Boston</span>
-                      </div>
-                    </div>
-                    <div class="person__progress">
-                      <div class="person__progress-line">
-                        <span style="width: 96%"></span>
-                      </div>
-                      <div class="person__progress-value">96%</div>
-                    </div>
-                  </div>
+        </div>
+        <div class="page__body">
+          <div class="container">
+            <div class="edit-people">
+              <div class="edit-people__invite">
+                <div class="edit-people__invite-block">
+                  <div class="edit-people__invite-title">Add & analyze a new person</div>
+                  <img class="edit-people__invite-icon" src="./src/img/Union.svg" alt="">
                 </div>
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Vadim Kuznetcov, 23</h3>
-                    <div class="person__info">
-                      <div class="person__position">career guy</div>
-                      <div class="person__geo">
-                        <img src="./img/location.svg" alt="">
-                        <span>Moscow</span>
-                      </div>
-                    </div>
-                    <div class="person__progress">
-                      <div class="person__progress-line">
-                        <span style="width: 88%"></span>
-                      </div>
-                      <div class="person__progress-value">88%</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Elevanova Elena, 19</h3>
-                    <div class="person__info">
-                      <div class="person__position">romantic soul</div>
-                      <div class="person__geo">
-                        <img src="./img/location.svg" alt="">
-                        <span>Petropavlovsk Kamchatskiy</span>
-                      </div>
-                    </div>
-                    <div class="person__progress">
-                      <div class="person__progress-line">
-                        <span style="width: 92%"></span>
-                      </div>
-                      <div class="person__progress-value">92%</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Sisoeva Margarita, 20</h3>
-                  </div>
-                </div>
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Guy Hawkins, 22</h3>
-                  </div>
-                </div>
+                <button class="edit-people__button button" type="button">
+                  <span>Invite friends</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                    <rect x="4.75171" width="0.996094" height="10" rx="0.498047" fill="currentColor"/>
+                    <rect x="10.25" y="4.50195" width="0.996094" height="10" rx="0.498047" transform="rotate(90 10.25 4.50195)" fill="currentColor"/>
+                    </svg>
+                </button>
               </div>
-              <div class="page__people-list page__people-list--uploaded">
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Leslie Alexander, 28</h3>
+              <div class="edit-people__find">
+                <div class="edit-people__find-title">Find new match in the application</div>
+                <div class="edit-people__find-avatars">
+                  <div class="edit-people__find-avatar">
+                    <img src="./src/img/avatar.png" alt="">
+                  </div>
+                  <div class="edit-people__find-avatar">
+                    <img src="./src/img/avatar.png" alt="">
+                  </div>
+                  <div class="edit-people__find-avatar">
+                    <img src="./src/img/avatar.png" alt="">
+                  </div>
+                  <div class="edit-people__find-avatar">
+                    <img src="./src/img/avatar.png" alt="">
+                  </div>
+                  <div class="edit-people__find-avatar">
+                    <img src="./src/img/avatar.png" alt="">
+                  </div>
+                  <div class="edit-people__find-avatar edit-people__find-more">
+                    <span></span><span></span><span></span>
                   </div>
                 </div>
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Vadim Kuznetcov, 23</h3>
+                <button class="edit-people__button button" type="button">Discover</button>
+              </div>
+            </div>
+            <div class="tab">
+              <div class="tab__buttons">
+                <button class="tab__button tab__button--active" type="button" data-num="one">My likes</button>
+                <button class="tab__button" type="button" data-num="two">Uploaded by me</button>
+                <span></span>
+              </div>
+              <div class="tab__pages">
+                <div class="tab__page tab__page--one tab__page--active">
+                  <div class="people">
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Leslie Alexander, 28</h3>
+                        <div class="person__info">
+                          <div class="person__position">adventure explorer</div>
+                          <div class="person__geo">
+                            <img src="./src/img/location.svg" alt="">
+                            <span>Boston</span>
+                          </div>
+                        </div>
+                        <div class="person__progress">
+                          <div class="person__progress-line">
+                            <span style="width: 96%"></span>
+                          </div>
+                          <div class="person__progress-value">96%</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Vadim Kuznetcov, 23</h3>
+                        <div class="person__info">
+                          <div class="person__position">career guy</div>
+                          <div class="person__geo">
+                            <img src="./img/location.svg" alt="">
+                            <span>Moscow</span>
+                          </div>
+                        </div>
+                        <div class="person__progress">
+                          <div class="person__progress-line">
+                            <span style="width: 88%"></span>
+                          </div>
+                          <div class="person__progress-value">88%</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Elevanova Elena, 19</h3>
+                        <div class="person__info">
+                          <div class="person__position">romantic soul</div>
+                          <div class="person__geo">
+                            <img src="./img/location.svg" alt="">
+                            <span>Petropavlovsk Kamchatskiy</span>
+                          </div>
+                        </div>
+                        <div class="person__progress">
+                          <div class="person__progress-line">
+                            <span style="width: 92%"></span>
+                          </div>
+                          <div class="person__progress-value">92%</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Sisoeva Margarita, 20</h3>
+                      </div>
+                    </div>
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Guy Hawkins, 22</h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Elevanova Elena, 19</h3>
-                  </div>
-                </div>
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Sisoeva Margarita, 20</h3>
-                  </div>
-                </div>
-                <div class="page__person person">
-                  <img src="./img/avatar.png" alt="" class="person__img">
-                  <div class="person__content">
-                    <h3 class="person__name">Guy Hawkins, 22</h3>
+                <div class="tab__page tab__page--two">
+                  <div class="people">
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Leslie Alexander, 28</h3>
+                      </div>
+                    </div>
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Vadim Kuznetcov, 23</h3>
+                      </div>
+                    </div>
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Elevanova Elena, 19</h3>
+                      </div>
+                    </div>
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Sisoeva Margarita, 20</h3>
+                      </div>
+                    </div>
+                    <div class="people__person person">
+                      <img src="./src/img/avatar.png" alt="" class="person__img">
+                      <div class="person__content">
+                        <h3 class="person__name">Guy Hawkins, 22</h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -169,19 +179,19 @@
         <div class="container">
           <ul class="nav__menu">
             <li class="nav__menu-item">
-              <img src="./img/home-icon.svg" alt="">
+              <img src="./src/img/home-icon.svg" alt="">
               <span>Home</span>
             </li>
             <li class="nav__menu-item">
-              <img src="./img/profile-icon.svg" alt="">
+              <img src="./src/img/profile-icon.svg" alt="">
               <span>My people</span>
             </li>
             <li class="nav__menu-item">
-              <img src="./img/discover-icon.svg" alt="">
+              <img src="./src/img/discover-icon.svg" alt="">
               <span>Discover</span>
             </li>
             <li class="nav__menu-item">
-              <img src="./img/profile-icon.svg" alt="">
+              <img src="./src/img/profile-icon.svg" alt="">
               <span>My profile</span>
             </li>
           </ul>

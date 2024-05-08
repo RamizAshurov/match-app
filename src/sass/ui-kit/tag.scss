@@ -1,0 +1,11 @@
+.tag {
+    border: to-vw(1) solid rgba($color: $grey, $alpha: 0.2) ;
+    border-radius: to-vw(20);
+    display: flex;
+    align-items: center;
+    gap: to-vw(4);
+    font-size: to-vw(12);
+    font-weight: 500;
+    line-height: 1.1;
+    padding: to-vw(4) to-vw(15) to-vw(5);
+}

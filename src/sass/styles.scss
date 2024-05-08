@@ -1,0 +1,18 @@
+@use "sass:math";
+
+@import "./reset.scss";
+@import "./global.scss";
+@import "./base.scss";
+
+// ui-kits
+@import "./ui-kit/tag.scss";
+@import "./ui-kit/button.scss";
+@import "./ui-kit/param.scss";
+@import "./ui-kit/progress.scss";
+@import "./ui-kit/tab.scss";
+@import "./ui-kit/accordeon.scss";
+
+// pages
+@import "./pages/people.scss";
+@import "./pages/person-compatibility.scss"
+
