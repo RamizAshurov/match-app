@@ -25,7 +25,7 @@ Array.from(document.querySelectorAll(".tab__buttons")).forEach(tabButtons => {
 })
 
 Array.from(document.querySelectorAll(".accordeon__button")).forEach(accordeonButtonEl => {
-    let timeoutId;
+    // let timeoutId;
     accordeonButtonEl.addEventListener("click", e => {
         const accordeonEl = accordeonButtonEl.parentElement;
         const accordeonContentEl = accordeonButtonEl.previousElementSibling;
@@ -35,17 +35,18 @@ Array.from(document.querySelectorAll(".accordeon__button")).forEach(accordeonBut
             accordeonContentEl.style.height = accordeonContentHeight + "px";
             accordeonEl.classList.remove("accordeon--open")
             accordeonButtonEl.querySelector("span").innerHTML = "View info"
-            timeoutId = setTimeout(() => accordeonContentEl.style.height = "")
+            // timeoutId = setTimeout(() => accordeonContentEl.style.height = "")
+            accordeonContentEl.style.height = ""
         } else {
-            clearTimeout(timeoutId)
+            // clearTimeout(timeoutId)
             accordeonEl.classList.add("accordeon--open");
             accordeonContentEl.style.height = accordeonContentEl.scrollHeight + "px";
             accordeonButtonEl.querySelector("span").innerHTML = "Hide info"
             // accordeonContentEl.addEventListener("transitionend", () => {
+              // if (timeoutId) {
+              //     return
+              // }
             // }, { once: true })
-            if (timeoutId) {
-                return
-            }
             accordeonContentEl.style.height = "auto"
         }
     })
